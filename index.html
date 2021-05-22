@@ -10,19 +10,19 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid vw-100">
   <div class="row vh-100">
-
-	
+	  
+	<!-- Navigation -->
       <nav class="d-flex flex-column align-items-stretch justify-content-start col-xs-12 col-sm-4 col-lg-3 col-xl-2 bg-secondary text-white p-3">
-        <p class="fs-2 fw-bold">Welcome</p>
-        <button class="btn align-self-center btn-lg btn-warning m-1" type="button">Compose</button>
-        <button class="btn btn-sm btn-primary align-self-start m-3 d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#nav-collapse-main" aria-expanded="true" aria-controls="nav-collapse-main" aria-label="Toggle nav bar">
+        <p class="fs-2 fw-bold"><i class="bi bi-envelope me-3 p-1 px-2 fs-4 bg-white text-dark rounded-circle"></i>Welcome</p>
+        <button class="btn align-self-center btn-lg btn-warning m-1 text-white fw-bold" type="button">Compose</button>
+        <button class="btn btn-sm btn-success align-self-start m-3 d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#nav-collapse-main" aria-expanded="true" aria-controls="nav-collapse-main" aria-label="Toggle nav bar">
           <i class="bi bi-list"></i>
         </button>
         <div class="collapse d-sm-block" id="nav-collapse-main">
           <ul class="list-group table-hover list-unstyled m-3">
-            <li><a class="list-group-item list-group-item-action active" href="#">Inbox</a></li>
+            <li><a class="list-group-item list-group-item-action fw-bold active bg-success border-success" href="#">Inbox <span class="badge bg-white text-dark rounded-circle">1</span></a></li>
             <li><a class="list-group-item list-group-item-action" href="#">Tagged</a></li>
             <li><a class="list-group-item list-group-item-action" href="#">Important</a></li>
             <li><a class="list-group-item list-group-item-action" href="#">SentMail</a></li>
@@ -31,11 +31,14 @@
           </ul>
         </div>
       </nav>
-
-      <div id="inbox" class="d-flex flex-column justify-content-start col-xs-12 col-sm-8 col-lg-9 col-xl-4 bg-light p-3 overflow-auto">
-        <input type="search" placeholder="Search" id="searhbar">
-			<div class="overflow-auto">
-	        <div id="email-1" class="card m-3">
+       
+	<!-- Inbox -->
+      <div id="inbox" class="d-flex justify-content-start align-items-fill flex-column col-xs-12 col-sm-8 col-lg-9 col-xl-4 bg-success p-3">
+        <div class="input-group d-flex flex-row">
+			<span><i class="bi bi-search input-group-text p-3"></i></span>
+			<input type="search" placeholder="Search&hellip;" class="form-control">
+		</div>
+			<div id="email-1" class="card m-3 text-muted">
 	          <div class="card-body">
 	            <p class="text-right">May 18, 2021</p>
 	            <h5 class=card-title>Linkedin</h5>
@@ -51,25 +54,30 @@
 	          </div>
 	        </div>
 	
-	        <div id="email-3" class="card m-3">
+	        <div id="email-3" class="card m-3 text-muted">
 	          <div class="card-body">
 	            <p class="text-right">May 16, 2021</p>
 	            <h5 class="card-title">Netflix</h5>
 	            <p class="card-text">New recommendations based on that one time you accidentally clicked on that one documentary.</p>
 	          </div>
 	        </div>
-			</div>
-      </div>
-	
-      <div id="view" class="col-xs-12 col-sm-12 col-lg-12 col-xl-5 bg-white p-3">
+		</div>
+
+	<!-- Message -->
+      <div id="view" class="col-xs-12 col-sm-12 col-lg-12 col-xl-6 bg-white p-4">
         <div>
           <p class="text-secondary">To: ryenigma@gmail.com
             <br>
             From: theofficequotes@nbc.com</p>
           <p>
         </div>
-        <div>
-          <h2>Michael Scott Daily Quotes</h2>
+        <div class="d-flex flex-row ">
+          <h2 class="me-auto">Michael Scott Daily Quotes</h2>
+			<div class="text-muted">
+			  <i class="bi bi-trash"></i>
+			  <i class="bi bi-reply-fill"></i>
+			  <i class="bi bi-three-dots"></i>
+			</div> 
         </div>
         <div>
           <p>What is it like being single? I like it! I like starting each day with a sense of possibility. And I'm optimistic, because everyday I get a little more desperate. And desperate situations yield the quickest results.</p>
@@ -78,7 +86,16 @@
           <p>I have cause. It is beCAUSE I hate him.</p>
           <p>Sometimes I'll start a sentence and I don't even know where it's going. I just hope I find it along the way.</p>
         </div>
+        <div class="border-top pt-2">
+			<label for="Message">Reply Message:</label>
+			<textarea class="form-control" rows="5" id="Message"></textarea>
+			<div class="d-flex flex-row mt-2">
+					<a class="me-auto fs-4 ps-2 text-secondary" href="#"><i class="bi bi-paperclip"></i></a>
+					<button class="btn btn-trasparent border-warning text-warning border-3" type="submit">Reply</button>
+			</div>	
+        </div>
       </div>
+      
 	
   </div>
 </div>
